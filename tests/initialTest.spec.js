@@ -9,7 +9,7 @@ describe('opens the main landing page of the resource', function () {
 
     it('lands to exchange page', async function () {
        browser.get(`https://.${process.env.KIM_KILO}.tamrieltradecentre.com/pc/Trade`);
-       browser.sleep(20000);
+       //browser.sleep(20000);
         expect(true).to.be.equal(true);
     });
 
