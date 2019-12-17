@@ -10,7 +10,7 @@ pipeline{
         stage("INSTALL NPM AND DEPLOY ENVIRONMENT"){
             steps{
                 echo "========executing NPM INSTALL COMMAND========"
-               
+                sh "npm install"
                 echo "========executing WEBDRIVER MANAGER UPDATE COMMAND========"
                 sh "npx webdriver-manager update --versions.chrome 76.0.3809.68"
             }            
