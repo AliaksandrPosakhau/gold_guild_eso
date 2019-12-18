@@ -5,6 +5,11 @@ pipeline{
     options{
         disableConcurrentBuilds()
     }
+    
+    environment {   
+    NODE_TLS_REJECT_UNAUTHORIZED=0
+    isLOCAL=false
+  }
 
     stages{
         stage("INSTALL NPM AND DEPLOY ENVIRONMENT"){
