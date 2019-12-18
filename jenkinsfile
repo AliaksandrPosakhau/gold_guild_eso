@@ -19,7 +19,7 @@ pipeline{
         stage("EXECUTING APPLICATION"){
             steps{
                 echo "======== LAUNCHING TEST ========"
-                bat "${process.env.KIM_KILO}=%SERVER_NAME% npx protractor config/conf.js"              
+                bat "KIM_KILO=%SERVER_NAME% npx protractor config/conf.js"              
             }            
         }
     }    
