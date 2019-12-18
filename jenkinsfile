@@ -19,7 +19,7 @@ pipeline{
         stage("EXECUTING APPLICATION"){
             steps{
                 echo "======== LAUNCHING TEST ========"
-                bat "npx protractor config/conf.js"              
+                bat "${params.KIN_KILO}=%SERVER_NAME% npx protractor config/conf.js"              
             }            
         }
     }    
