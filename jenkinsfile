@@ -13,13 +13,15 @@ pipeline{
                 bat "npm install"
                 echo "========executing WEBDRIVER MANAGER UPDATE COMMAND========"
                 bat "npx webdriver-manager update --versions.chrome 76.0.3809.68"
+                
             }            
         }
 
         stage("EXECUTING APPLICATION"){
             steps{
                 echo "======== LAUNCHING TEST ========"
-                bat "KIM_KILO=%SERVER_NAME% npx protractor config/conf.js"              
+                bat "%ENV_VAR%=%JENKINS_SERVNAME% npx protractor config/conf.js"  
+                // "NODE_ENV=${params.NODE_ENV} npx protractor ./conf.js --specs=${params.PATH_TO_FEATURE_FILE}"            
             }            
         }
     }    
