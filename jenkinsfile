@@ -19,9 +19,11 @@ pipeline{
 
         stage("EXECUTING APPLICATION"){
             steps{
+                   script{
                 echo "======== LAUNCHING TEST ========"
                 bat "SERVER_NAME=${params.JENKINS_SERVNAME} npx protractor config/conf.js"  
-                // "NODE_ENV=${params.NODE_ENV} npx protractor ./conf.js --specs=${params.PATH_TO_FEATURE_FILE}"            
+                // "NODE_ENV=${params.NODE_ENV} npx protractor ./conf.js --specs=${params.PATH_TO_FEATURE_FILE}" 
+                }
             }            
         }
     }    
