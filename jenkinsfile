@@ -5,11 +5,6 @@ pipeline{
     options{
         disableConcurrentBuilds()
     }
-    
-    environment {   
-    NODE_TLS_REJECT_UNAUTHORIZED=0
-    isLOCAL=false
-  }
 
     stages{
         stage("INSTALL NPM AND DEPLOY ENVIRONMENT"){
@@ -24,11 +19,8 @@ pipeline{
 
         stage("EXECUTING APPLICATION"){
             steps{
-                   script{
                 echo "======== LAUNCHING TEST ========"
-                bat "SERVER_NAME=${params.JENKINS_SERVNAME} npx protractor config/conf.js"  
-                // "NODE_ENV=${params.NODE_ENV} npx protractor ./conf.js --specs=${params.PATH_TO_FEATURE_FILE}" 
-                }
+                bat "set SERVERS_LOCATION = %SERVERS_LOCATION_JEN% npx protractor config/conf.js"                         
             }            
         }
     }    
